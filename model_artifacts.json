@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "model": "Cactus-Compute/whistle",
+  "model_version": "2.0.0",
+  "engine_version": "3.1.0",
+  "license": "Apache-2.0",
+  "weights": {
+    "url": "https://huggingface.co/Cactus-Compute/whistle/resolve/b358ddadd89b7a713b5aa131f23032d3cca1b251/whistle.cact",
+    "sha256": "b6e02f048568ac5d01a2042556c658061e699acbc0aa2a1439f52f3d461dffeb",
+    "bytes": 16919407,
+    "filename": "whistle-2.0.0.cact"
+  },
+  "engines": {
+    "linux-x86_64": {
+      "url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-manylinux2014_x86_64.whl",
+      "sha256": "a0fc2f682ef18525d4d18583081ac31c1f6f211abe6c0b3bee44811ed7e0347e",
+      "bytes": 671203,
+      "filename": "needle-3.1.0-linux-x86_64.whl"
+    },
+    "linux-aarch64": {
+      "url": "https://huggingface.co/Cactus-Compute/needle3/resolve/c7c415a3d1b3d929014bc6e866d51ebb971f7089/python/cactus_needle-3.1.0-py3-none-manylinux2014_aarch64.whl",
+      "sha256": "f2f30a1178856025ab4bf75ef75e1bf28b8d0552cdd5614f7d06cedc1f713606",
+      "bytes": 649611,
+      "filename": "needle-3.1.0-linux-aarch64.whl"
+    }
+  }
+}

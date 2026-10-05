@@ -1,0 +1,79 @@
+[
+  {
+    "key": "allowed_root",
+    "label": "Permitted audio directory",
+    "type": "directory",
+    "help": "All audio paths must stay inside this directory. Empty uses the application root."
+  },
+  {
+    "key": "language",
+    "label": "Language",
+    "type": "select",
+    "options": [
+      "auto",
+      "en",
+      "de",
+      "fr",
+      "es",
+      "it",
+      "nl",
+      "pl"
+    ],
+    "help": "Auto-detect or choose one of Whistle’s seven languages. French is supported."
+  },
+  {
+    "key": "keywords",
+    "label": "Vocabulary hints",
+    "type": "json",
+    "rows": 4,
+    "help": "JSON array of names or short phrases, for example [\"BloxSmith\", \"HackInvent\"]. These are hints, not instructions."
+  },
+  {
+    "key": "word_timestamps",
+    "label": "Include word timestamps",
+    "type": "boolean",
+    "help": "Add word start/end times and model probabilities to the JSON output."
+  },
+  {
+    "key": "download_missing",
+    "label": "Download missing model assets",
+    "type": "boolean",
+    "help": "On first transcription only: fetch pinned official weights/engine, verify SHA-256, then reuse the block cache. Disable for offline-only use."
+  },
+  {
+    "key": "max_duration_sec",
+    "label": "Maximum clip duration (seconds)",
+    "type": "integer",
+    "min": 1,
+    "max": 30,
+    "help": "Whistle accepts at most 30 seconds per clip. Longer files are refused, never silently cut.",
+    "advanced": true
+  },
+  {
+    "key": "max_file_bytes",
+    "label": "Maximum audio file size (bytes)",
+    "type": "integer",
+    "min": 1024,
+    "max": 134217728,
+    "help": "Bound the input before decoding. Default 32 MiB.",
+    "advanced": true
+  },
+  {
+    "key": "timeout_sec",
+    "label": "Processing deadline (seconds)",
+    "type": "integer",
+    "min": 1,
+    "max": 300,
+    "help": "Bound local conversion and inference; Stop cancels owned processes.",
+    "advanced": true
+  },
+  {
+    "key": "download_timeout_sec",
+    "label": "First download deadline (seconds)",
+    "type": "integer",
+    "min": 10,
+    "max": 600,
+    "help": "Additional allowance for the initial asset download. No audio is uploaded.",
+    "advanced": true
+  }
+]

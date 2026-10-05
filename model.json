@@ -1,0 +1,143 @@
+{
+  "kind": "whistle_stt",
+  "version": "0.1.0",
+  "title": "Whistle STT",
+  "description": "Transcribe completed audio clips locally with the pinned Whistle CPU model; no cloud speech API.",
+  "repository_url": "https://github.com/HackInvent/bloxmith-whistle-stt",
+  "bloxsmith_compatibility": [
+    "1.0.9"
+  ],
+  "tested_with_bloxsmith": "1.0.9",
+  "prerequisites": [
+    {
+      "type": "executable",
+      "name": "ffmpeg"
+    },
+    {
+      "type": "manual",
+      "name": "Linux glibc x86-64 or ARM64; Python 3.10+. First use downloads about 18 MB of checksum-pinned public weights/engine unless offline mode is enabled."
+    }
+  ],
+  "locales": {
+    "en": "locales/en.json",
+    "fr": "locales/fr.json"
+  },
+  "ports": {
+    "inputs": [
+      {
+        "id": 1,
+        "name": "audio_file",
+        "title": "Audio file",
+        "accepts": [
+          "text/plain",
+          "file/path",
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "one",
+        "required": true,
+        "execution_requirement": "required_for_execution"
+      }
+    ],
+    "outputs": [
+      {
+        "id": 1,
+        "name": "text",
+        "title": "Final text",
+        "emits": [
+          "text/plain",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 2,
+        "name": "result",
+        "title": "Transcript JSON",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 3,
+        "name": "status",
+        "title": "Status",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      }
+    ]
+  },
+  "config": {
+    "allowed_root": "",
+    "language": "auto",
+    "keywords": [],
+    "word_timestamps": true,
+    "download_missing": true,
+    "max_duration_sec": 30,
+    "max_file_bytes": 33554432,
+    "timeout_sec": 120,
+    "download_timeout_sec": 120
+  },
+  "port_capabilities": {
+    "can_add_inputs": false,
+    "can_add_outputs": false
+  },
+  "runtime": {
+    "initial_state": "waiting",
+    "runtime_executable": true,
+    "active_worker": true,
+    "centralized_executor": "generic",
+    "centralized_dependency_mode": "any_event",
+    "file_browser": true,
+    "active_execution_policy": "on_each_event"
+  },
+  "ui_assets": {
+    "modal": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/block_modal.js"
+      }
+    ],
+    "inspector_panel": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/inspector_panel.js"
+      }
+    ],
+    "node_card": [
+      {
+        "kind": "css",
+        "path": "assets/css/node_card.css"
+      }
+    ]
+  }
+}
